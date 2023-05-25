@@ -33,7 +33,7 @@ void _sub(stack_t **custom_stack, unsigned int line_count)
 {
 	int result;
 
-	if (!stack || !*custom_stack || !((*custom_stack)->next))
+	if (!custom_stack || !*custom_stack || !((*custom_stack)->next))
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_count);
 		exit(EXIT_FAILURE);
@@ -55,7 +55,7 @@ void _mul(stack_t **custom_stack, unsigned int line_count)
 {
 	int result;
 
-	if (!stack || !*custom_stack || !((*custom_stack)->next))
+	if (!custom_stack || !*custom_stack || !((*custom_stack)->next))
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_count);
 		exit(EXIT_FAILURE);
@@ -121,6 +121,6 @@ void mod(stack_t **custom_stack, unsigned int line_count)
 	}
 
 	results = ((*custom_stack)->next->n) % ((*custom_stack)->n);
-	pop(stack, line_count);/*remove top node*/
+	pop(custom_stack, line_count);/*remove top node*/
 	(*custom_stack)->n = results;
 }

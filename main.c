@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 
 void file_error(char *argv);
@@ -28,8 +29,19 @@ int main(int argc, char **argv)
 	if (!file)
 		file_error(argv[1]);
 
-	while ((getline(&buffer, &buf_len, file)) != (-1))
+	while (1)
 	{
+		buffer = (char *)malloc(buf_len);
+		if (!buffer)
+		{
+			fprintf(stderr, "Memory allocation failed\n");
+			exit(EXIT_FAILURE);
+		}
+		if (fgets(buffer, buf_len, file) == NULL)
+		{
+			free(buffer);
+			break;
+		}
 		if (status)
 			break;
 		if (*buffer == '\n')
