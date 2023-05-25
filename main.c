@@ -50,6 +50,8 @@ int main(int argc, char **argv)
 		opcode(&custom_stack, str, line_count);
 		line_count++;
 	}
+	free(buffer);
+	free_stack(custom_stack);
 	fclose(file);
 	exit(EXIT_SUCCESS);
 }
