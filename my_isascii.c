@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * my_isascii - checks for isascii
- * @c: character
+ * my_isascii - checks ASCII chars
+ * @c: char
  *
  * Return: nothing
  */

@@ -1,7 +1,7 @@
 #include <ctype.h>
 #include "monty.h"
 
-int my_isascii(int c);
+
 /**
  * pchar - prints the int at the top of the stack as char
  * @custom_stack: stack given by the main file
