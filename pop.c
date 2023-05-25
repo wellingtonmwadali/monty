@@ -11,7 +11,7 @@ void pop(stack_t **custom_stack, unsigned int line_count)
 {
 	stack_t *tmp = NULL;
 
-	if (!stack || !*custom_stack)
+	if (!custom_stack || !*custom_stack)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_count);
 		exit(EXIT_FAILURE);

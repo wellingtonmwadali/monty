@@ -40,7 +40,8 @@ void push(stack_t **custom_stack, unsigned int line_count)
  *
  * Return: void
  */
-void pall(stack_t **custom_stack, unsigned int line_cnt __attribute__((unused)))
+void pall(stack_t **custom_stack,
+		unsigned int line_cnt __attribute__((unused)))
 {
 	print_stack(*custom_stack);
 }

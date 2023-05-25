@@ -57,7 +57,7 @@ void free_stack(stack_t *custom_stack)
 stack_t *queue_node(stack_t **custom_stack, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
-	stack_t *current = *stack;
+	stack_t *current = *custom_stack;
 
 	if (!new)
 	{
