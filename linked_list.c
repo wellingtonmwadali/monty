@@ -3,6 +3,50 @@
 #include "monty.h"
 
 /**
+ * print_stack - prints the contents of a stack_t stack
+ * @custom_stack: the stack head
+ *
+ * Return: number of elements
+ */
+size_t print_stack(const stack_t *custom_stack)
+{
+	size_t c = 0;
+
+	while (custom_stack)
+	{
+		printf("%d\n", custom_stack->n);
+		custom_stack = custom_stack->next;
+		c++;
+	}
+
+	return (c);
+}
+
+/**
+ * free_stack - frees  dlistint_t linked list
+ * @custom_stack: the list head
+ *
+ * Return: nothing
+ */
+void free_stack(stack_t *custom_stack)
+{
+	stack_t *current = custom_stack;
+	stack_t *next;
+
+	if (custom_stack)
+	{
+		next = custom_stack->next;
+		while (current)
+		{
+			free(current);
+			current = next;
+			if (next)
+				next = next->next;
+		}
+	}
+}
+
+/**
  * queue_node - adds  node to stack_t in queue_node
  * @custom_stack: the stack head
  * @n: number of the node
@@ -75,46 +119,3 @@ stack_t *add_node(stack_t **custom_stack, const int n)
 	return (new);
 }
 
-/**
- * print_stack - prints the contents of a stack_t stack
- * @custom_stack: the stack head
- *
- * Return: number of elements
- */
-size_t print_stack(const stack_t *custom_stack)
-{
-	size_t c = 0;
-
-	while (custom_stack)
-	{
-		printf("%d\n", custom_stack->n);
-		custom_stack = custom_stack->next;
-		c++;
-	}
-
-	return (c);
-}
-
-/**
- * free_stack - frees  dlistint_t linked list
- * @custom_stack: the list head
- *
- * Return: nothing
- */
-void free_stack(stack_t *custom_stack)
-{
-	stack_t *current = custom_stack;
-	stack_t *next;
-
-	if (custom_stack)
-	{
-		next = custom_stack->next;
-		while (current)
-		{
-			free(current);
-			current = next;
-			if (next)
-				next = next->next;
-		}
-	}
-}
