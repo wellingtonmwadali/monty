@@ -1,6 +1,7 @@
+#include <ctype.h>
 #include "monty.h"
 
-
+int my_isascii(int c);
 /**
  * pchar - prints the int at the top of the stack as char
  * @custom_stack: stack given by the main file
@@ -16,7 +17,7 @@ void pchar(stack_t **custom_stack, unsigned int line_count)
 		exit(EXIT_FAILURE);
 		return;
 	}
-	if (isascii((*custom_stack)->n) == 0)
+	if (my_isascii((*custom_stack)->n) == 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_count);
 		exit(EXIT_FAILURE);
