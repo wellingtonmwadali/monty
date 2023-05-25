@@ -97,7 +97,7 @@ void pstr(stack_t **custom_stack, unsigned int line_count);
 void rotl(stack_t **custom_stack, unsigned int line_count);
 void rotr(stack_t **custom_stack, unsigned int line_count);
 
-/*void opcode(stack_t **custom_stack, char *str, unsigned int line_count);*/
+void opcode(stack_t **custom_stack, char *str, unsigned int line_count);
 
 int is_digit(char *string);
 int isnumber(char *str);

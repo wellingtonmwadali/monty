@@ -4,6 +4,7 @@
 void file_error(char *argv);
 void error_usage(void);
 int status = 0;
+void opcode(stack_t **custom_stack, char *str, unsigned int line_count);
 
 /**
  * main - entry point
@@ -56,7 +57,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		global.argument = strtok(NULL, " \t\n");
-		/*opcode(&custom_stack, str, line_count);*/
+		opcode(&custom_stack, str, line_count);
 		line_count++;
 	}
 	free(buffer);
